@@ -1,0 +1,11 @@
+#python program to find XOR of all elements in array function 
+
+defxorOfArray(arr,n):
+xor_arr=0
+foriinrange(n):
+xor_arr=xor_arr^arr[i]
+returnxor_arr
+if__name__=='__main__':
+arr=[3,9,12,13,15]
+n=len(arr)
+print(xorOfArray(arr,n))
