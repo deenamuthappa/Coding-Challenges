@@ -1,0 +1,26 @@
+//C program to find non repeating character in a string 
+
+#include<stdlib.h> 
+#include<stdio.h> 
+#define NO_OF_CHARS 256 
+int *get_char_count (char *str) 
+{ 
+int *count = (int *)calloc(sizeof(int), NO_OF_CHARS); 
+int i; 
+for (i = 0; *(str+i); i++) 
+count[*(str+i)]++; 
+return count; 
+} 
+int first_non_repeating_character(char *str)
+{ 
+int *count = get_char_count(str); 
+int index = -1, i; 
+for (i = 0; *(str+i); i++) 
+{ 
+if (count[*(str+i)] == 1) 
+{ 
+index = i; 
+break; 
+} 
+} 
+free(count);
